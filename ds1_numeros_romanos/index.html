@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desafio 1</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.6.0/font/bootstrap-icons.min.css"
+      integrity="sha512-7w04XesEFaoeeKX0oxkwayDboZB/+AKNF5IUE50fCUDUywLvDN4gv2513TLQS+RDenAeHEK3O40jZZVrkpnWWw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="scripts.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Desafio 1</h1>
+      <h2>Números Romanos</h2>
+    </header>
+    <div id="container" class="container">
+      <button
+        id="switch-numeral"
+        class="btn btn-switch"
+        onclick="triggerSwitchNumeral()"
+      >
+        <i class="bi bi-arrow-left-right"></i>
+      </button>
+
+      <div class="custom-input first required">
+        <label for="indo-arabic">Indo-Arábico</label>
+        <input
+          id="indo-arabic"
+          name="indo-arabic"
+          type="number"
+          oninput="handleInputChange()"
+        />
+      </div>
+
+      <div class="custom-input last">
+        <label for="roman">Romano</label>
+        <input
+          name="roman"
+          id="roman"
+          type="text"
+          disabled
+          oninput="handleInputChange()"
+        />
+      </div>
+    </div>
+    <footer>
+      Veja
+      <a href="https://dojopuzzles.com/problems/numeros-romanos/" target="blank"
+        >aqui</a
+      >
+      o desafio
+    </footer>
+  </body>
+</html>

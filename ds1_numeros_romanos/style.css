@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+:root {
+  --clr-light: #ed6456;
+  --clr-dark: #d46d87;
+}
+
+body {
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  width: 70vw;
+  height: 30vh;
+  padding: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  border-radius: 8px;
+
+  background: #fff;
+}
+
+.custom-input {
+  padding: 12px;
+  width: 100%;
+
+  border: #acacac solid 2px;
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+}
+.custom-input > * {
+  line-height: 1.25em;
+  font-size: 1.25em;
+}
+
+.custom-input > input[type="number"]::-webkit-outer-spin-button,
+.custom-input > input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.custom-input > input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.custom-input:focus-within {
+  outline: 2px solid black;
+}
+
+.custom-input > input {
+  border: none;
+}
+.custom-input > input:focus {
+  outline: none;
+}
+
+.container > * {
+  flex-shrink: 1;
+}
+
+.custom-input.first {
+  order: -1;
+  flex-basis: calc(45% - 16px);
+  position: relative;
+}
+
+.container button {
+  order: 0;
+  background: transparent;
+  color: black;
+  border: none;
+  flex-basis: 4%;
+
+  margin: 0 16px;
+}
+
+.custom-input.last {
+  order: 1;
+  background-color: #f1f1f1;
+  flex-basis: calc(45% - 16px);
+  position: relative;
+}
+.custom-input.last > input {
+  background-color: #f1f1f1;
+}
+
+.container button:focus {
+  outline: none;
+}
+.container button > i {
+  padding: 2px;
+  font-size: 23px;
+}
+.container button:focus > i,
+.container button:hover > i {
+  color: var(--clr-light);
+}
+
+.custom-input::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 1;
+  background-image: linear-gradient(90deg, var(--clr-dark), var(--clr-light));
+  transform: scaleX(0);
+  transition: transform 350ms ease-in-out;
+}
+.custom-input.first::before {
+  top: -10px;
+  transform-origin: right;
+}
+.custom-input.last::before {
+  bottom: -10px;
+  transform-origin: left;
+}
+
+.container button:hover ~ .custom-input::before,
+.container button:focus ~ .custom-input::before {
+  transform: scaleX(1);
+}
+
+.custom-input:focus-within::before {
+  transform: scaleX(1);
+}
+.custom-input:focus-within {
+  outline: none;
+  border-color: var(--clr-light);
+  color: var(--clr-dark);
+}
+
+header,
+footer {
+  padding: 8px 0 16px 0;
+  align-self: flex-start;
+  text-align: center;
+  background-image: linear-gradient(90deg, var(--clr-dark), var(--clr-light));
+  width: 100%;
+
+  height: auto;
+  color: white;
+}
+header {
+  clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);
+  margin-bottom: -3vw;
+}
+
+h1,
+h2 {
+  font-family: "Bungee", cursive;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  line-height: 1.5em;
+}
+
+footer {
+  align-self: flex-end;
+  color: black;
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -3vw;
+  font-family: "Bungee", cursive;
+  padding: 8px;
+}
+footer a {
+  font-family: "Bungee", cursive;
+  color: white;
+}

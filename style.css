@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+:root {
+  --clr-main: #e3f1f8;
+  --clr-main-light: #99d3ee;
+  --clr-highlight: #fb8500;
+  --clr-headings: #0c2533;
+}
+
+body {
+  background: var(--clr-main-light);
+  display: grid;
+  place-items: center;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+
+  background-color: var(--clr-main);
+
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+
+  padding: 32px;
+}
+
+.navigation li {
+  padding: 16px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+
+  background-color: var(--clr-highlight);
+  border-radius: 3px;
+
+  transition: transform 250ms ease-in-out;
+}
+.navigation li:hover,
+.navigation li:focus-within {
+  transform: scale(1.5, 1.5);
+}
+
+.navigation {
+  list-style-position: inside;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.navigation a,
+.navigation li::marker {
+  color: var(--clr-headings);
+  text-decoration: none;
+}
+.navigation a:visited {
+  filter: brightness(3%);
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 1.25em;
+  color: var(--clr-headings);
+  font-family: "Press Start 2P", cursive;
+}
+h3 {
+  font-size: 20px;
+  color: var(--clr-headings);
+  font-family: "Press Start 2P", cursive;
+  text-align: right;
+}
